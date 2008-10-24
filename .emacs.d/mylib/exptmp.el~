@@ -1,5 +1,0 @@
-(defun myfunc (format-str arg-array)
-  (loop for x in arg-array do
-	(insert (apply 'format (cons format-str x)))
-	)
-  )
