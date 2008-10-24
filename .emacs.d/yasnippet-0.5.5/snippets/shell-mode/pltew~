@@ -1,0 +1,4 @@
+#name pltew ... {...}
+# --
+set term x11 0; plot "error.csv" every ${1:sep}::${2:start}::${3:stop} w lp, "error.csv" every $1::$2::$3 using 1:5 axis x1y\
+2 w lp

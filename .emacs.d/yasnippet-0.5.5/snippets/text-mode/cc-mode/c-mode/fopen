@@ -1,0 +1,5 @@
+#name : fp = fopen(..., ...); fclose(fp);
+# --
+${1:fp} = fopen(${file}, "${r}");
+$0
+fclose($1);
