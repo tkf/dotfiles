@@ -1,3 +1,19 @@
+;; version management
+(setq preferences-directory "~/.emacs.d/")
+
+(defun load-file-in-dir (dir file)
+  (load (concat dir file)))
+
+(cond
+ ((string-match "^23\." emacs-version)
+  (load-file-in-dir preferences-directory "init23.el"))
+ )
+
+;; library
+(setq my-site-lisp-path (concat preferences-directory "site-lisp/"))
+(add-to-list 'load-path my-site-lisp-path )
+(add-to-list 'load-path (concat my-site-lisp-path "color-theme-6.6.0/") )
+
 ;======================================================================
 ; 言語・文字コード関連の設定
 ;======================================================================
@@ -208,16 +224,16 @@
 ;=======================================================================
 ;; rst-mode
 ;=======================================================================
-;(autoload 'rst-mode "rst-mode" "mode for editing reStructuredText documents" t)
-;(setq auto-mode-alist
-;      (append '(("\\.rst$" . rst-mode)
-;		("\\.rest$" . rst-mode)) auto-mode-alist))
+(autoload 'rst-mode "rst-mode" "mode for editing reStructuredText documents" t)
+(setq auto-mode-alist
+      (append '(("\\.rst$" . rst-mode)
+		("\\.rest$" . rst-mode)) auto-mode-alist))
 ;; auto line break with width of 75
 ;(setq fill-column 77)
 ;(setq rst-mode-hook 'turn-on-auto-fill)
 
-(require 'rst)
-(add-hook 'text-mode-hook 'rst-text-mode-bindings)
+;(require 'rst)
+;(add-hook 'text-mode-hook 'rst-text-mode-bindings)
 
 
 ;=======================================================================
@@ -237,13 +253,6 @@
 
 (put 'upcase-region 'disabled nil)
 
-;; version management
-(setq preferences-directory "~/.emacs.d/")
-
-(defun load-file-in-dir (dir file)
-  (load (concat dir file)))
-
-(cond
- ((string-match "^23\." emacs-version)
-  (load-file-in-dir preferences-directory "init23.el"))
- )
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-arjen)
