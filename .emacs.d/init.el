@@ -8,6 +8,7 @@
  ((string-match "^23\." emacs-version)
   (load-file-in-dir preferences-directory "init23.el"))
  )
+; emacs-major-version
 
 ;; library
 (setq my-site-lisp-path
@@ -19,13 +20,6 @@
 (setq mylib-path
       (concat preferences-directory "mylib/"))
 (load (concat mylib-path "mylib.el"))
-
-;; load setting file (switch by hostname)
-(setq hostname (my-get-stdout-shell-command "hostname"))
-(setq host-setting-file
-      (concat preferences-directory "host-" hostname ".el"))
-(load host-setting-file)
-
 
 ;======================================================================
 ; 言語・文字コード関連の設定
@@ -265,6 +259,12 @@
 
 (put 'upcase-region 'disabled nil)
 
+; color-theme
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-arjen)
+
+;; load setting file (switch by hostname)
+(setq hostname (my-get-stdout-shell-command "hostname"))
+(setq host-setting-file
+      (concat preferences-directory "host-" hostname ".el"))
+(load host-setting-file)

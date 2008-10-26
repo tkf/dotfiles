@@ -1,4 +1,4 @@
-(defun get-stdout-shell-command (command)
+(defun my-get-stdout-shell-command (command)
   (interactive)
   (set-buffer "*Shell Command Output*")
   (erase-buffer)
@@ -6,7 +6,7 @@
   (delete-char -1); delete line break
   (buffer-string))
 
-(defun get-stdout-shell-command-arg (command arg)
+(defun my-get-stdout-shell-command-arg (command arg)
   (interactive)
   (set-buffer "*Shell Command Output*")
   (erase-buffer)
