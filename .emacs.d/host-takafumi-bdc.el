@@ -1,0 +1,1 @@
+(setq user-mail-address "tkf@rkn")
