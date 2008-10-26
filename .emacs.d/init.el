@@ -10,9 +10,22 @@
  )
 
 ;; library
-(setq my-site-lisp-path (concat preferences-directory "site-lisp/"))
+(setq my-site-lisp-path
+      (concat preferences-directory "site-lisp/"))
 (add-to-list 'load-path my-site-lisp-path )
 (add-to-list 'load-path (concat my-site-lisp-path "color-theme-6.6.0/") )
+
+;; mylib
+(setq mylib-path
+      (concat preferences-directory "mylib/"))
+(load (concat mylib-path "mylib.el"))
+
+;; load setting file (switch by hostname)
+(setq hostname (my-get-stdout-shell-command "hostname"))
+(setq host-setting-file
+      (concat preferences-directory "host-" hostname ".el"))
+(load host-setting-file)
+
 
 ;======================================================================
 ; 言語・文字コード関連の設定
@@ -115,7 +128,6 @@
 ; user config
 ;=======================================================================
 (setq user-full-name "ARAKAKI, Takafumi")
-(setq user-mail-address "tkf@rkn")
 
 ;=======================================================================
 ; pstricks
