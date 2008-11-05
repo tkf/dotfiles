@@ -1,2 +1,4 @@
 (setq user-mail-address "tkf@rkn")
-(color-theme-charcoal-black)
+(if window-system
+    (color-theme-charcoal-black);if not 'emacs -nw'
+  )

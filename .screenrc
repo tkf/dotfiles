@@ -1,2 +1,7 @@
 escape ^Tt
 markkeys h=^B:l=^F:$=^E:^U=^Z:^D=^V
+shell zsh
+startup_message off
+#caption always "%+0<%?%F%{= wd}%:%{= ww}%? %-w%{=u dr}%50>%n %t%{-}%+w%65< %=%?%F%{.b}%?%y/%m/%d(%D) %?%F%{.m}%?%c%?%F%{wd}%?%? [%0`]%?"
+caption always  "%+0<%?%F%{= wm}%:%{= wk}%? %-w%{=u dy}%50>%n %t%{-}%+w%65< %=%?%F%{.b}%?%y/%m/%d(%D) %?%F%{.m}%?%c%?%F%{wd}%?%? [%0`]%?"
+#               other win - here - in sep      this win
