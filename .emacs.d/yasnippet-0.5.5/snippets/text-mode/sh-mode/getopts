@@ -1,0 +1,21 @@
+#name : getopt template
+# --
+CMDNAME=\`basename \$0\`
+HELP="
+Usage: $CMDNAME [-${1:o} ${option}] [-h]\n
+-$1 : ${this is option.}\n
+-h : help.\n
+"
+
+while getopts c:h OPT
+do
+  case $OPT in
+    "c" ) flg_c="TRUE" ; cmd="$OPTARG" ;;
+    "h" ) echo $HELP 1>&2
+          exit 1 ;;
+      * ) echo $HELP 1>&2
+          exit 1 ;;
+  esac
+done
+
+shift \`expr $OPTIND - 1\`
