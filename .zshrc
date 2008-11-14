@@ -1,5 +1,3 @@
-# users generic .zshrc file for zsh(1)
-
 ## Environment variable configuration
 #
 # LANG
@@ -158,3 +156,15 @@ esac
 ## load user .zshrc configuration file
 #
 #[ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
+
+case `hostname` in
+    "takafumi-bdc")
+	HISTFILE=~/.zsh_history
+	;;
+    "yoganidra.bdc.net")
+	HISTFILE=~/.zsh_history
+	;;
+    *)
+	HISTFILE=~/.zsh_history_others
+	;;
+esac
