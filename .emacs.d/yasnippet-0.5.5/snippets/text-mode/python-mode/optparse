@@ -1,0 +1,13 @@
+#name : from optparse import OptionParser ...
+# --
+from optparse import OptionParser
+parser = OptionParser()
+parser.add_option("-f", "--file", dest="file", default="hogefile",
+                  help="this is help.", metavar="FILE")
+parser.add_option("-i", "--index", dest="index", type="int",
+                  help="this is help.", metavar="NUM")
+parser.add_option("-t", "--test", dest="test", default=False, action="store_true",
+                  help="this is test.")
+
+(opts, args) = parser.parse_args()
+#print options.file, options.index, options.test
