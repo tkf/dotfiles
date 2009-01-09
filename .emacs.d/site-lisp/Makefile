@@ -1,4 +1,4 @@
-all: rst.el django-mode.el revive.el revive.el windows.el
+all: django-mode.el revive.el revive.el windows.el
 
 rst-mode.el:
 	wget http://www.merten-home.de/FreeSoftware/rst-mode/rst-mode.el
