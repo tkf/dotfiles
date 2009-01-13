@@ -3,3 +3,4 @@
                   'japanese-jisx0208
                   '("VL ゴシック" . "unicode-bmp"))
 (setq anthy-accept-timeout 1)
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/yatex/")
