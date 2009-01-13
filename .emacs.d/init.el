@@ -4,12 +4,6 @@
 (defun load-file-in-dir (dir file)
   (load (concat dir file)))
 
-(cond
- ((string-match "^23\." emacs-version)
-  (load-file-in-dir preferences-directory "init23.el"))
- )
-; emacs-major-version
-
 ;; library
 (setq my-site-lisp-path
       (concat preferences-directory "site-lisp/"))
@@ -272,3 +266,12 @@
 (setq host-setting-file
       (concat preferences-directory "host-" hostname ".el"))
 (load host-setting-file)
+
+
+;; version control
+(cond
+ ((string-match "^23\." emacs-version)
+  (load-file-in-dir preferences-directory "init23.el"))
+ )
+; emacs-major-version
+
