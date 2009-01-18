@@ -28,16 +28,6 @@
 (set-default-coding-systems 'utf-8)
 (setq file-name-coding-system 'utf-8)
 ;;
-;======================================================================
-; Anthy
-;    CTRL-\で入力モード切替え
-;======================================================================
-(load-library "anthy")
-(setq default-input-method "japanese-anthy")
-; 句読点
-(anthy-change-hiragana-map "," "，")
-(anthy-change-hiragana-map "." "．")
-;;
 ;=======================================================================
 ;フォント
 ;=======================================================================
@@ -143,10 +133,6 @@
    (concat "dvips -E -o" my-dvips-eps-filename ".eps "
 	      my-dvips-eps-filename ".dvi")))
 (global-set-key "\C-cEps" ' my-dvips-eps)
-
-(setq auto-mode-alist
-      (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
-(autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
 
 ;=======================================================================
 ; python-mode
@@ -264,17 +250,31 @@
 (require 'color-theme)
 (color-theme-initialize)
 
+;=======================================================================
 ;; load setting file (switch by hostname)
 (setq hostname (my-get-stdout-shell-command "hostname"))
 (setq host-setting-file
       (concat preferences-directory "host-" hostname ".el"))
 (load host-setting-file)
 
-
 ;; version control
 (cond
  ((string-match "^23\." emacs-version)
-  (load-file-in-dir preferences-directory "init23.el"))
+  (load-file-in-dir preferences-directory "ver-23.el"))
  )
 ; emacs-major-version
 
+;; 
+(defun load-directory-files (dir &optional regex)
+  (let*
+      ((regex (or regex ".+"))
+       (files (and
+               (file-accessible-directory-p dir)
+               (directory-files dir 'full regex))))
+
+    (mapc (lambda (file)
+            (when (load file nil t)
+              (message "`%s' loaded." file))) files)))
+
+;; load preferences.
+(load-directory-files preferences-directory "^pref-.+el$")
