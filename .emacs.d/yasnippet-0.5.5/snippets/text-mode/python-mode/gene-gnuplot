@@ -1,0 +1,80 @@
+# -*- coding: utf-8 -*-
+# name: gene-gnuplot
+# --
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+GRAPH_PRE_NAME = "graph_"
+
+def parse_arg():
+    from optparse import OptionParser
+    parser = OptionParser()
+    parser.add_option("-c", "--code-file", dest="code_file", default=None,
+                      help=("file name for the generated code. "
+                            "if not specified, the code will be printed out."))
+    # for debug
+    parser.add_option("--dbg-x11", dest="dbg_x11", default=False,
+                      action="store_true",
+                      help="show graphs.")
+    
+    (opts, args) = parser.parse_args()
+    #print options.file, options.index, options.test
+    return (opts, args)
+
+def set_code_gene(opts):
+    gene = {}
+
+    gene['header'] = """### Header
+set datafile comment '#'
+set datafile sep ','
+"""
+    if opts.dbg_x11:
+        gene['graph_pre'] = "set term x11 %(graph_i)d\n"
+    else:
+        gene['graph_pre'] = "set out '" + GRAPH_PRE_NAME + "-%(seqfile)s.eps'\n"
+        gene['header'] += """\
+set term postscript eps enhanced color
+"""
+
+    gene['graph'] = """### Graph
+set size 0.9, 0.9
+set multiplot
+set size 0.9, 0.45
+## --- ##
+set origin 0,0.5
+set xlabel ''
+set ylabel 'Y TOP'
+plot [][]\\
+  '%%(seqfile)s' every ::1::60 using 5  w l ti ''
+## --- ##
+set origin 0,0
+set xlabel 'Time step'
+set ylabel 'Y BOTTOM'
+plot [][-0.1:1.1]\\
+  '%%(seqfile)s' every ::1::60 using 299 w l ti '' lt 1 lw 3
+unset multiplot
+\n"""# % dict(  )
+    
+    return gene
+
+def gene_code(gene, args):
+    code = gene['header']
+
+    for i,sf in enumerate(args):
+        code += gene['graph_pre'] % dict( seqfile=sf, graph_i=i )
+        code += gene['graph'    ] % dict( seqfile=sf )
+    return code
+
+if __name__ == '__main__':
+    (opts, args) =  parse_arg()
+
+    gene = set_code_gene(opts)
+    code = gene_code(gene,args)
+
+    if opts.code_file is not None:
+        out = file(opts.code_file,'w')
+    else:
+        import sys
+        out = sys.stdout
+
+    out.write(code)
