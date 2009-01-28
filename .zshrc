@@ -168,3 +168,7 @@ case `hostname` in
 	HISTFILE=~/.zsh_history_others
 	;;
 esac
+
+alias yj2a='~/mybin/yaml_and_jinja_to_anything.py'
+PATH=$PATH:/home/takafumi/mybin
+export PATH
