@@ -1,0 +1,7 @@
+alias lss='ln -s'
+alias emacsnw='emacs -nw'
+
+
+# Local Variables:
+# mode: shell-script
+# End:
