@@ -169,7 +169,9 @@ case `hostname` in
 	;;
 esac
 
-alias yj2a='~/mybin/yaml_and_jinja_to_anything.py'
+alias ln-s='ln -s'
+alias emacs-nw='emacs -nw'
+
 PATH=$PATH:/home/takafumi/mybin
 export PATH
 
