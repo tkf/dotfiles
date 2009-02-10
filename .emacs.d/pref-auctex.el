@@ -14,7 +14,7 @@
 
 (setq TeX-parse-self t)
 
-(setq-default TeX-master nil)
+;(setq-default TeX-master nil)
 
 ;; no "sections"
 (setq preview-default-option-list

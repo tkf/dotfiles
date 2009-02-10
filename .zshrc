@@ -171,8 +171,22 @@ esac
 
 alias ln-s='ln -s'
 alias emacs-nw='emacs -nw'
+alias head-n1='head -n1'
+alias tail-n1='tail -n1'
+alias cut-f1-10='cut -f1-10 -d" "'
 
 PATH=$PATH:/home/takafumi/mybin
 export PATH
 
 FSPHOME=/media/fsp/takafumi/
+
+log-do(){
+    "$@"
+    echo "do: " "$@"
+    echo "$@" >>CMD
+}
+
+log2CMD(){
+    echo "$@"
+    echo "$@" >>CMD
+}
