@@ -174,6 +174,8 @@ alias emacs-nw='emacs -nw'
 alias head-n1='head -n1'
 alias tail-n1='tail -n1'
 alias cut-f1-10='cut -f1-10 -d" "'
+alias quota-s='quota -s'
+alias less-R='less -R'
 
 PATH=$PATH:/home/takafumi/mybin
 export PATH
