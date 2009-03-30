@@ -99,6 +99,10 @@
             (when (load file nil t)
               (message "`%s' loaded." file))) files)))
 
+;; for DropBox
+(setq auto-save-file-name-transforms
+      `((".*/Dropbox/.*" ,temporary-file-directory t)))
+
 ;; load preferences.
 (load-directory-files preferences-directory "^pref-.+el$")
 
