@@ -30,10 +30,23 @@ case ${UID} in
 # default
 *)
   setopt prompt_subst
-  PROMPT='%{${fg[red]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
+  # change PROMPT by machines
+  case `hostname` in
+    yoganidra.bdc.net)
+      PROMPT='%{${fg[yellow]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
+      RPROMPT='%{[33m%}[%~]%{[m%}'
+      ;;
+    takafumi-*)
+      PROMPT='%{${fg[red]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
+      RPROMPT='%{[33m%}[%~]%{[m%}'
+      ;;
+    *)
+      PROMPT='%{${fg[white]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
+      RPROMPT='%{[33m%}[%~]%{[m%}'
+      ;;
+  esac
   #PROMPT2='%{${fg[red]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}_%{$reset_color%} '
   #RPROMPT='%{$fg[white]%}%~%{$fg[cyan]%}:%{$fg[white]%}%!%{$reset_color%}'
-  RPROMPT='%{[33m%}[%~]%{[m%}'
   ;;
 esac
 
