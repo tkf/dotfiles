@@ -1,0 +1,48 @@
+# -*- mode: conf-unix -*-
+# mlterm mail configuration
+# last updated : 2009/02/24 14:02:41 JST
+
+# 端末縦横サイズ(文字)
+geometry=80x27
+
+#ーーーーー文字関係ーーーーーーー
+receive_string_via_ucs = true
+# Unicode記号文字幅を半角2文字にする。
+col_size_of_width_a = 2
+# アンチエイリアス(Xft)時、JISX0208 の Unicode 変換に CP932 の変換テーブルを使う
+use_cp932_ucs_for_xft=true
+# UNICODE を適当な文字集合にmapして、UNICODE フォントを使わずに表示する
+not_use_unicode_font=false
+# すべての文字を UNICODE フォントだけを使って表示する
+only_use_unicode_font=false
+# US_ASCII の表示には、必ず ISO8859-1 フォントを使用する
+iso88591_font_for_usascii=false
+# DEC_SPECIAL フォントの罫線文字のグリフを動的に合成
+compose_dec_special_font=false
+# インプッドメソッドの設定
+input_method = scim
+
+
+#ーーーースクロールバーーーーー
+# scrollbar_mode = right
+scrollbar_mode = none
+# 使いたいスクロールバーの名前
+# (*simple* / sample / sample2 / next / motif / athena / mozmodern)
+# scrollbar_view_name=sample2
+
+#ーーーー色設定ーーーーーーーー
+# 端末画面の前景色
+# fg_color=white
+# 端末画面の背景色
+bg_color=#F6F0E6
+# スクロールバーの前景色
+# sb_fg_color=white
+# スクロールバーの背景色
+# sb_bg_color=black
+# 紙にする画像ファイルのパス
+# wall_picture
+# Focus から外れたときの前景/背景色の Fade 率(百分率)
+#fade_ratio=90
+# 背景画像(透過処理含む)の輝度調整(百分率)
+#brightness=80
+#--------------------
