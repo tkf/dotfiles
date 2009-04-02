@@ -34,7 +34,7 @@ case ${UID} in
   case `hostname` in
     yoganidra.bdc.net)
       PROMPT='%{${fg[yellow]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
-      RPROMPT='%{[33m%}[%~]%{[m%}'
+      RPROMPT='%{${fg[green]}%}[%~]%{$reset_color%}'
       ;;
     takafumi-*)
       PROMPT='%{${fg[red]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
