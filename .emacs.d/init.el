@@ -82,8 +82,12 @@
 ;=======================================================================
 ;; version control
 (cond
+ ;; emacs 23
  ((string-match "^23\." emacs-version)
   (load-file-in-dir preferences-directory "ver-23.el"))
+ ;; emacs -nw
+ ((not (string-match "dumb" (getenv '"TERM")))
+  (load-file-in-dir preferences-directory "ver-nw.el"))
  )
 ; emacs-major-version
 

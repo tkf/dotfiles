@@ -21,6 +21,8 @@ iso88591_font_for_usascii=false
 compose_dec_special_font=false
 # インプッドメソッドの設定
 input_method = scim
+# font size
+fontsize = 12
 
 
 #ーーーースクロールバーーーーー
