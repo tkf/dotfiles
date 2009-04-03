@@ -86,7 +86,8 @@
  ((string-match "^23\." emacs-version)
   (load-file-in-dir preferences-directory "ver-23.el"))
  ;; emacs -nw
- ((not (string-match "dumb" (getenv '"TERM")))
+ (;(not (string-match "dumb" (getenv '"TERM")))
+  (not window-system)
   (load-file-in-dir preferences-directory "ver-nw.el"))
  )
 ; emacs-major-version
