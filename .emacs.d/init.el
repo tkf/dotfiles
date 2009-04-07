@@ -80,18 +80,6 @@
 (put 'upcase-region 'disabled nil)
 
 ;=======================================================================
-;; version control
-(cond
- ;; emacs 23
- ((string-match "^23\." emacs-version)
-  (load-file-in-dir preferences-directory "ver-23.el"))
- ;; emacs -nw
- (;(not (string-match "dumb" (getenv '"TERM")))
-  (not window-system)
-  (load-file-in-dir preferences-directory "ver-nw.el"))
- )
-; emacs-major-version
-
 ;; 
 (defun load-directory-files (dir &optional regex)
   (let*
@@ -110,6 +98,18 @@
 
 ;; load preferences.
 (load-directory-files preferences-directory "^pref-.+el$")
+
+;; version control
+(cond
+ ;; emacs 23
+ ((string-match "^23\." emacs-version)
+  (load-file-in-dir preferences-directory "ver-23.el"))
+ ;; emacs -nw
+ (;(not (string-match "dumb" (getenv '"TERM")))
+  (not window-system)
+  (load-file-in-dir preferences-directory "ver-nw.el"))
+ )
+; emacs-major-version
 
 ;; load setting file (switch by hostname)
 (setq hostname (my-get-stdout-shell-command "hostname"))
