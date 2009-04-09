@@ -35,6 +35,9 @@
 	 font-lock-doc-face
 	 font-lock-string-face
 	 font-lock-builtin-face
+	 font-lock-variable-name-face
+	 font-lock-type-face
+	 font-lock-constant-face
 	 ;; org-mode
 	 org-level-2 org-level-3 org-level-4
 	 org-level-5 org-level-6 org-level-7 org-level-8

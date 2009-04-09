@@ -10,6 +10,7 @@
       org-todo-interpretation 'type)
 
 (setq org-agenda-files
-      (list "~/repos/arataka/org/mygtd.org"
+      (list "~/repos/arataka/org/memo.org"
+	    "~/repos/arataka/org/gtd.org"
 	    "~/repos/arataka/org/daily.org"
 	    ))
