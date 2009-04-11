@@ -42,6 +42,8 @@
 	 org-level-2 org-level-3 org-level-4
 	 org-level-5 org-level-6 org-level-7 org-level-8
 	 org-todo org-done
+	 ;;
+	 sdic-face
 	 ))
   (while fontset-list
     (set-face-font (car fontset-list) my-default-font)
