@@ -1,6 +1,10 @@
 (setq user-mail-address "tkf@rkn")
 (if window-system
-    (color-theme-billw);if not 'emacs -nw'
+    (progn ;; if not 'emacs -nw'
+      (color-theme-billw)
+      ;; for black background color
+      (setq py-python-command-args '("-pylab" "-colors" "Linux"))
+      )
   )
 
 (cond

@@ -1,6 +1,7 @@
 alias lss='ln -s'
 alias emacsnw='emacs -nw'
 
+export PYTHONPATH=${PYTHONPATH}:${HOME}/work/wm/home/`uname -m`/lib/python/
 
 # Local Variables:
 # mode: shell-script

@@ -1,4 +1,10 @@
-all: django-mode.el revive.el revive.el windows.el
+all: django-mode.el revive.el revive.el windows.el winhist.el
+
+#winring.el:
+#	wget http://www.python.org/emacs/winring/winring.el
+
+winhist.el:
+	wget http://www.bookshelf.jp/elc/winhist.el
 
 rst-mode.el:
 	wget http://www.merten-home.de/FreeSoftware/rst-mode/rst-mode.el

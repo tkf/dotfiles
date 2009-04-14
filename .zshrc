@@ -209,17 +209,19 @@ log2CMD(){
 # host
 case `hostname` in
     takafumi-bdc)
-	alias svn="${HOME}/my/bin/svn"
+	#alias svn="${HOME}/my/bin/svn"
 	;;
     takafumi-bdc1)
-	alias svn="${HOME}/my/bin/svn"
+	#alias svn="${HOME}/my/bin/svn"
 	;;
     yoganidra.bdc.net)
 	alias py2.5="python2.5"
 	alias easy_install="${HOME}/linux_x86_64/bin/easy_install"
+	alias svn="${HOME}/linux_x86_64/bin/svn"
 	;;
     c*)
 	alias py2.5="python2.5"
 	alias easy_install="${HOME}/linux_x86_64/bin/easy_install"
+	alias svn="${HOME}/linux_x86_64/bin/svn"
 	;;
 esac
