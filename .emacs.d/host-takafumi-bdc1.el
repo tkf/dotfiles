@@ -13,3 +13,7 @@
   (load-file-in-dir preferences-directory
 		    "host-takafumi-bdc1-ver-23.el"))
  )
+
+(setq exec-path
+      (append
+       (list "/home/takafumi/my/bin") exec-path))
