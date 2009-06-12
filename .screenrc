@@ -7,3 +7,9 @@ caption always  "%+0<%?%F%{= wm}%:%{= wk}%? %-w%{=u dy}%50>%n %t%{-}%+w%65< %=%?
 #               other win - here - in sep      this win
 
 bind s exec !!! $HOME/mybin/screen-copy2x.sh
+
+bind d setenv DISPLAY
+bind c echo $DISPLAY
+
+screen -t em      0 emacs -nw
+screen

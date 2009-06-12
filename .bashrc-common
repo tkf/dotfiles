@@ -3,6 +3,24 @@ alias emacsnw='emacs -nw'
 
 export PYTHONPATH=${PYTHONPATH}:${HOME}/work/wm/home/`uname -m`/lib/python/
 
+case `hostname` in
+yoganidra.bdc.net)
+    echo "DISPLAY: "$DISPLAY
+;;
+c*.bdc.net)
+    if [ "$PBS_ENVIRONMENT" = 'PBS_INTERACTIVE' ]; then
+        echo "start zsh >>>"
+        zsh
+    fi
+;;
+fst.*)
+    echo "---"
+    echo "ssh to yoganidra"
+    ssh yoganidra -X
+;;
+esac
+
+
 # Local Variables:
 # mode: shell-script
 # End:

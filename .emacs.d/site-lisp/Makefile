@@ -1,4 +1,13 @@
-all: django-mode.el revive.el revive.el windows.el winhist.el
+all: django-mode.el revive.el revive.el windows.el winhist.el key-chord.el
+
+key-chord.el:
+	wget http://www.emacswiki.org/cgi-bin/wiki/download/key-chord.el
+
+weblogger: weblogger.tar.gz
+	tar zxvf weblogger.tar.gz
+
+weblogger.tar.gz:
+	wget http://nethazard.net/weblogger.tar.gz
 
 #winring.el:
 #	wget http://www.python.org/emacs/winring/winring.el

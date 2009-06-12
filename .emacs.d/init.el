@@ -9,6 +9,7 @@
       (concat preferences-directory "site-lisp/"))
 (add-to-list 'load-path my-site-lisp-path )
 (add-to-list 'load-path (concat my-site-lisp-path "color-theme-6.6.0/") )
+(add-to-list 'load-path (concat my-site-lisp-path "weblogger/") )
 
 ;; mylib
 (setq mylib-path
@@ -52,6 +53,7 @@
 
 ; window move
 (windmove-default-keybindings) ; ウィンドウ移動
+(setq windmove-wrap-around t) ; loop
 ;(global-set-key "\C-cr" ' windmove-right)
 ;(global-set-key "\C-cl" 'windmove-left)
 ;(global-set-key "\C-cd" 'windmove-down)
@@ -122,7 +124,8 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(safe-local-variable-values (quote ((TeX-master . t) (TeX-master . "main")))))
+ '(safe-local-variable-values (quote ((TeX-master . t) (TeX-master . "main"))))
+ '(weblogger-config-alist (quote (("default" ("user" . "arataka") ("server-url" . "http://arataka.wordpress.com/xmlrpc.php") ("weblog" . "1701430"))))))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.

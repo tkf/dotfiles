@@ -40,6 +40,10 @@ case ${UID} in
       PROMPT='%{${fg[red]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
       RPROMPT='%{[33m%}[%~]%{[m%}'
       ;;
+    c*.bdc.net)
+      PROMPT='%{${bg[cyan]}%}%{${fg[black]}%}${HOST%%.*}-${PBS_JOBID%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
+      RPROMPT='%{${fg[green]}%}[%~]%{$reset_color%}'
+      ;;
     *)
       PROMPT='%{${fg[white]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
       RPROMPT='%{[33m%}[%~]%{[m%}'
@@ -206,6 +210,8 @@ log2CMD(){
     echo "$@" >>CMD
 }
 
+export PYTHONPATH=${PYTHONPATH}:${HOME}/work/wm/home/`uname -m`/lib/python/
+
 # host
 case `hostname` in
     takafumi-bdc)
@@ -222,11 +228,15 @@ case `hostname` in
 	alias py2.5="python2.5"
 	alias easy_install="${HOME}/linux_x86_64/bin/easy_install"
 	alias svn="${HOME}/linux_x86_64/bin/svn"
+	# python
+	export PYMACS_PYTHON=${HOME}/linux_x86_64/bin/python2.5
 	;;
     c*)
 	alias python="python2.5"
 	alias py2.5="python2.5"
 	alias easy_install="${HOME}/linux_x86_64/bin/easy_install"
 	alias svn="${HOME}/linux_x86_64/bin/svn"
+	# python
+	export PYMACS_PYTHON=${HOME}/linux_x86_64/bin/python2.5
 	;;
 esac
