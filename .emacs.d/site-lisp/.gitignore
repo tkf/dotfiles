@@ -1,2 +1,4 @@
 *.el
+weblogger*
+org-*
 color-theme*

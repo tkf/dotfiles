@@ -1,4 +1,16 @@
-all: django-mode.el revive.el revive.el windows.el winhist.el key-chord.el
+all: \
+django-mode.el revive.el revive.el windows.el winhist.el key-chord.el \
+org-6.28d/lisp/org-install.elc
+
+org-6.28d/lisp/org-install.elc: org-6.28d/
+	cd org-6.28d/
+	make
+
+org-6.28d: org-6.28d.tar.gz
+	tar zxf $<
+
+org-6.28d.tar.gz:
+	wget http://orgmode.org/org-6.28d.tar.gz
 
 key-chord.el:
 	wget http://www.emacswiki.org/cgi-bin/wiki/download/key-chord.el

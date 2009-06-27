@@ -10,6 +10,7 @@
 (add-to-list 'load-path my-site-lisp-path )
 (add-to-list 'load-path (concat my-site-lisp-path "color-theme-6.6.0/") )
 (add-to-list 'load-path (concat my-site-lisp-path "weblogger/") )
+(add-to-list 'load-path (concat my-site-lisp-path "org-6.28d/lisp/") )
 
 ;; mylib
 (setq mylib-path
@@ -66,6 +67,9 @@
 
 ;; C-c c で compile コマンドを呼び出す
 (define-key mode-specific-map "c" 'compile)
+
+;; use alphabetical day str (e.g.: Tue)
+(setq system-time-locale "C")
 
 ;;
 (add-hook 'comint-output-filter-functions

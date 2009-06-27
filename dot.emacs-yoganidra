@@ -1,0 +1,161 @@
+; -*- mode:lisp -*-
+;======================================================================
+; 言語・文字コード関連の設定
+;======================================================================
+(when (equal emacs-major-version 21) (require 'un-define))
+(set-language-environment "Japanese")
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(setq file-name-coding-system 'utf-8)
+;;
+;======================================================================
+; Anthy
+;    CTRL-\で入力モード切替え
+;======================================================================
+;(load-library "anthy")
+;(setq default-input-method "japanese-anthy")
+;;
+;=======================================================================
+;フォント
+;=======================================================================
+;(cond (window-system
+;	(set-default-font "-*-fixed-medium-r-normal--14-*-*-*-*-*-*-*")
+;       (progn
+;         (set-face-font 'default
+;                        "-shinonome-gothic-medium-r-normal--14-*-*-*-*-*-*-*")
+;         (set-face-font 'bold
+;                        "-shinonome-gothic-bold-r-normal--14-*-*-*-*-*-*-*")
+;         (set-face-font 'italic
+;                        "-shinonome-gothic-medium-i-normal--14-*-*-*-*-*-*-*")
+;         (set-face-font 'bold-italic
+;                        "-shinonome-gothic-bold-i-normal--14-*-*-*-*-*-*-*")
+;       )))
+;
+;=======================================================================
+;フレームサイズ・位置・色など
+;=======================================================================
+(setq initial-frame-alist
+	(append (list
+;		   '(foreground-color . "white")		;; 文字色
+;		   '(background-color . "#333366")		;; 背景色
+;		   '(border-color . "black")
+;		   '(mouse-color . "white")
+;		   '(cursor-color . "white")
+;		   '(width . 90)				;; フレームの幅
+;		   '(height . 49)				;; フレームの高さ
+;		   '(top . 0)					;; Y 表示位置
+;		   '(left . 340)				;; X 表示位置
+		   '(font . "-Misc-Fixed-Medium-R-Normal--14-130-75-75-C-70-ISO8859-1")
+		   )
+		initial-frame-alist))
+(setq default-frame-alist initial-frame-alist)
+;;
+;=======================================================================
+; Misc
+;=======================================================================
+(mouse-wheel-mode)						;;ホイールマウス
+(global-font-lock-mode t)					;;文字の色つけ
+(setq line-number-mode t)					;;カーソルのある行番号を表示
+(auto-compression-mode t)					;;日本語infoの文字化け防止
+(set-scroll-bar-mode 'right)					;;スクロールバーを右に表示
+;(global-set-key "\C-z" 'undo)					;;UNDO
+(setq frame-title-format					;;フレームのタイトル指定
+	(concat "%b - emacs@" system-name))
+
+;(display-time)							;;時計を表示
+(global-set-key "\C-h" 'backward-delete-char)			;;Ctrl-Hでバックスペース
+;(setq make-backup-files nil)					;;バックアップファイルを作成しない
+;(setq visible-bell t)						;;警告音を消す
+;(setq kill-whole-line t)					;;カーソルが行頭にある場合も行全体を削除
+;(when (boundp 'show-trailing-whitespace) (setq-default show-trailing-whitespace t))	;;行末のスペースを強調表示
+
+;=======================================================================
+; user config
+;=======================================================================
+(setq user-full-name "ARAKAKI, Takafumi")
+;(setq user-mail-address "tkf@yoganidra")
+
+;=======================================================================
+; window move
+;=======================================================================
+(windmove-default-keybindings) ; ウィンドウ移動
+;(global-set-key "\C-cr" ' windmove-right)
+;(global-set-key "\C-cl" 'windmove-left)
+;(global-set-key "\C-cd" 'windmove-down)
+;(global-set-key "\C-cu" 'windmove-up)
+;;
+(global-set-key [end]   'windmove-right)
+(global-set-key [home]  'windmove-left )
+(global-set-key [next]  'windmove-down )
+(global-set-key [prior] 'windmove-up   )
+
+;; C-c c で compile コマンドを呼び出す
+(define-key mode-specific-map "c" 'compile)
+
+;;
+(add-hook 'comint-output-filter-functions
+          'comint-watch-for-password-prompt)
+(autoload 'ansi-color-for-comint-mode-on "ansi-color"
+          "Set `ansi-color-for-comint-mode' to t." t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
+(add-to-list 'load-path "~/mybin/")
+;(require 'any-ini-mode)
+;(add-to-list 'auto-mode-alist '(".*\\.ini$" . any-ini-mode))
+;(add-to-list 'auto-mode-alist '(".*\\.conf$" . any-ini-mode))
+;(add-to-list 'auto-mode-alist '("\\.curlyrc" . any-ini-mode))
+
+;=======================================================================
+; windows.el
+;=======================================================================
+;; windows.el
+;(require 'windows)
+;(win:startup-with-window)
+;(define-key ctl-x-map "C" 'see-you-again)
+
+; color-theme
+;(add-to-list 'load-path "~/mybin/color-theme-6.6.0/")
+;(require 'color-theme)
+;(color-theme-initialize)
+;(color-theme-charcoal-black)
+
+;
+(setq truncate-partial-width-windows nil)
+(tool-bar-mode 0)
+
+;;;;
+(add-to-list 'load-path "~/misc/site-lisp/")
+
+;; org-mode
+(add-to-list 'load-path "~/misc/site-lisp/org-6.26d/lisp/")
+(load "~/dotfiles/.emacs.d/pref-org.el")
+
+;(require 'python-mode)
+(autoload 'python-mode "python-mode" "Python Mode." t)
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'interpreter-mode-alist '("python" . python-mode))
+
+(add-hook 'python-mode-hook
+	  '(lambda ()
+             ;(load "py-mode-ext")  
+             ;(load "pyp")
+             (require 'pycomplete)
+             ;(define-key py-mode-map [f12] 'pyp)
+             ;(define-key py-mode-map "\C-c\C-c" 'py-execute-prog)
+             ;(define-key py-mode-map "\C-c\C-g" 'py-call-pdb)
+             ;(define-key py-mode-map "\C-c\C-w" 'pychecker)
+	     (setq indent-tabs-mode nil)
+	     )
+	  )
+
+
+; ipython
+(setq ipython-command "/home/takafumi/linux_x86_64/bin/ipython")
+(require 'ipython)
