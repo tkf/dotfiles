@@ -1,6 +1,8 @@
 alias lss='ln -s'
 alias emacsnw='emacs -nw'
 
+PATH=$PATH:${HOME}/mybin:${HOME}/Dropbox/linux/secret_bin
+
 export PYTHONPATH=${PYTHONPATH}:${HOME}/work/wm/home/`uname -m`/lib/python/
 
 case `hostname` in

@@ -194,7 +194,8 @@ alias cut-f1-10='cut -f1-10 -d" "'
 alias quota-s='quota -s'
 alias less-R='less -R'
 
-PATH=$PATH:/home/takafumi/mybin
+PATH=$PATH:${HOME}/mybin:${HOME}/Dropbox/linux/secret_bin
+
 export PATH
 
 FSPHOME=/media/fsp/takafumi/
