@@ -1,12 +1,13 @@
 all: \
 django-mode.el revive.el revive.el windows.el winhist.el key-chord.el \
-org-6.28d/lisp/org-install.elc
+weblogger org-6.28d
 
-org-6.28d/lisp/org-install.elc: org-6.28d/
-	make -f org-6.28d/Makefile
+#org-6.28d/lisp/org-install.elc: org-6.28d/
+#	make -f org-6.28d/Makefile
 
 org-6.28d: org-6.28d.tar.gz
 	tar zxf $<
+	echo "Please make org-6.28. Do this: \n% cd org-6.28\n% make"
 
 org-6.28d.tar.gz:
 	wget http://orgmode.org/org-6.28d.tar.gz
