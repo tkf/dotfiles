@@ -16,12 +16,15 @@ c*.bdc.net)
     fi
 ;;
 fst.*)
-    echo "---"
-    echo "ssh to yoganidra"
-    ssh yoganidra -X
+    #echo "---"
+    #echo "ssh to yoganidra"
+    #ssh yoganidra -X
 ;;
 esac
 
+if [ -f $HOME/aRNN/config/aRNN-icc.sh ]; then
+    source $HOME/aRNN/config/aRNN-icc.sh
+fi
 
 # Local Variables:
 # mode: shell-script

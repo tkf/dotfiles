@@ -220,6 +220,9 @@ case `hostname` in
 	;;
     takafumi-bdc1)
 	alias svn="${HOME}/my/bin/svn"
+	# aRNN
+	[ -f ~/aRNN/config/aRNN-gcc.sh ] && source ~/aRNN/config/aRNN-gcc.sh
+	export ARNN_SVN_CMD="${HOME}/my/bin/svn"
 	;;
     takafumi-bdc2)
 	alias svn="${HOME}/my/bin/svn"
@@ -231,6 +234,9 @@ case `hostname` in
 	alias svn="${HOME}/linux_x86_64/bin/svn"
 	# python
 	export PYMACS_PYTHON=${HOME}/linux_x86_64/bin/python2.5
+	# aRNN
+	[ -f ~/aRNN/config/aRNN-icc.sh ] && source ~/aRNN/config/aRNN-icc.sh
+	export ARNN_SVN_CMD="${HOME}/linux_x86_64/bin/svn"
 	;;
     c*)
 	alias python="python2.5"
@@ -239,5 +245,10 @@ case `hostname` in
 	alias svn="${HOME}/linux_x86_64/bin/svn"
 	# python
 	export PYMACS_PYTHON=${HOME}/linux_x86_64/bin/python2.5
+	# aRNN
+	[ -f ~/aRNN/config/aRNN-icc.sh ] && source ~/aRNN/config/aRNN-icc.sh
+	export ARNN_SVN_CMD="${HOME}/linux_x86_64/bin/svn"
 	;;
 esac
+
+export EDITOR=emacsclient

@@ -3,6 +3,9 @@
 (define-key function-key-map [27 79 49 59 50 67] [S-right])
 (define-key function-key-map [27 79 49 59 50 68] [S-left])
 
+; emacsclient
+(server-start)
+
 ;(cond
 ; ;; mlterm
 ; ((string-match "mlterm" (getenv '"TERM"))

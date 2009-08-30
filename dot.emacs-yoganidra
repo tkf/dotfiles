@@ -159,3 +159,6 @@
 ; ipython
 (setq ipython-command "/home/takafumi/linux_x86_64/bin/ipython")
 (require 'ipython)
+
+; emacsclient
+(server-start)
