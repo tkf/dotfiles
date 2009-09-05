@@ -1,0 +1,8 @@
+#name : display math with label
+# --
+.. math::
+  :label: ${label here}
+
+  ${\exp i\pi = -1}
+
+$0
