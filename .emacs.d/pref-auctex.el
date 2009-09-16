@@ -19,6 +19,12 @@
 
 ;(setq-default TeX-master nil)
 
+(eval-after-load "tex"
+  '(add-to-list 'TeX-command-list
+		'("DviPdfMx" "dvipdfmx %s" TeX-run-command nil t)
+		)
+  )
+
 ;; no "sections"
 (setq preview-default-option-list
       (quote
