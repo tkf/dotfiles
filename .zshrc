@@ -211,6 +211,16 @@ log2CMD(){
     echo "$@" >>CMD
 }
 
+log2howm () {
+    ext=`basename $1 | grep -o '\.[^\.]*$' | sed -e 's/\.//g'` 
+    if [ -z "$ext" ]
+    then
+        ext='log' 
+    fi
+    log=$HOME/howm/`date +%Y/%m/%F-%H%M%S`.${ext} 
+    cp -iv $1 $log
+}
+
 export PYTHONPATH=${PYTHONPATH}:${HOME}/work/wm/home/`uname -m`/lib/python/
 
 # host
