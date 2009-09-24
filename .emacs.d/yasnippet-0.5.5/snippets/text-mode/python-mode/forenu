@@ -1,0 +1,4 @@
+#name : for (i, elem) in enumerate(iterable) : ...
+# --
+for (${i}, ${elem}) in ${iterable}:
+    $0
