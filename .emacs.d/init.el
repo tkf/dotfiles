@@ -100,7 +100,9 @@
 
 ;; for DropBox
 (setq auto-save-file-name-transforms
-      `((".*/Dropbox/.*" ,temporary-file-directory t)))
+      `((".*/Dropbox/.*" ,temporary-file-directory t)
+	(".*/howm/.*" ,temporary-file-directory t)
+	))
 
 ;; load preferences.
 (load-directory-files preferences-directory "^pref-.+el$")
@@ -122,6 +124,17 @@
 (setq host-setting-file
       (concat preferences-directory "host-" hostname ".el"))
 (load host-setting-file)
+
+;; rst2wp
+(defun insert-rst2wp-of-other-buffer ()
+  "Insert output of rst2wp converted other-buffer to cursor position."
+  (interactive)
+  (shell-command
+   (concat "~/tools/rst2wp.py "
+	   (buffer-file-name (other-buffer)))
+   1)
+  )
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
