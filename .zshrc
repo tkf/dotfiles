@@ -194,12 +194,6 @@ alias cut-f1-10='cut -f1-10 -d" "'
 alias quota-s='quota -s'
 alias less-R='less -R'
 
-PATH=$PATH:${HOME}/mybin:${HOME}/Dropbox/linux/secret_bin
-
-export PATH
-
-FSPHOME=/media/fsp/takafumi
-
 log-do(){
     "$@"
     echo "do: " "$@"
@@ -221,44 +215,6 @@ log2howm () {
     cp -iv $1 $log
 }
 
-export PYTHONPATH=${PYTHONPATH}:${HOME}/work/wm/home/`uname -m`/lib/python/
-
-# host
-case `hostname` in
-    takafumi-bdc)
-	#alias svn="${HOME}/my/bin/svn"
-	;;
-    takafumi-bdc1)
-	alias svn="${HOME}/my/bin/svn"
-	# aRNN
-	[ -f ~/aRNN/config/aRNN-gcc.sh ] && source ~/aRNN/config/aRNN-gcc.sh
-	export ARNN_SVN_CMD="${HOME}/my/bin/svn"
-	;;
-    takafumi-bdc2)
-	alias svn="${HOME}/my/bin/svn"
-	;;
-    yoganidra.bdc.net)
-	alias python="python2.5"
-	alias py2.5="python2.5"
-	alias easy_install="${HOME}/linux_x86_64/bin/easy_install"
-	alias svn="${HOME}/linux_x86_64/bin/svn"
-	# python
-	export PYMACS_PYTHON=${HOME}/linux_x86_64/bin/python2.5
-	# aRNN
-	[ -f ~/aRNN/config/aRNN-icc.sh ] && source ~/aRNN/config/aRNN-icc.sh
-	export ARNN_SVN_CMD="${HOME}/linux_x86_64/bin/svn"
-	;;
-    c*)
-	alias python="python2.5"
-	alias py2.5="python2.5"
-	alias easy_install="${HOME}/linux_x86_64/bin/easy_install"
-	alias svn="${HOME}/linux_x86_64/bin/svn"
-	# python
-	export PYMACS_PYTHON=${HOME}/linux_x86_64/bin/python2.5
-	# aRNN
-	[ -f ~/aRNN/config/aRNN-icc.sh ] && source ~/aRNN/config/aRNN-icc.sh
-	export ARNN_SVN_CMD="${HOME}/linux_x86_64/bin/svn"
-	;;
-esac
+[ -f ~/.priv_config/rc-path.sh ] && source ~/.priv_config/rc-path.sh
 
 export EDITOR=emacsclient
