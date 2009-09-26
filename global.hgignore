@@ -1,0 +1,15 @@
+syntax: glob
+*.o
+*.lo
+*.la
+#*#
+.*.rej
+*.rej
+.*~
+*~
+.#*
+.DS_Store
+*.sw[po]
+tags
+*.elc
+*.pyc
