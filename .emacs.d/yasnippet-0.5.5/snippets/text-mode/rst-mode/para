@@ -1,0 +1,6 @@
+#name : Paragraph title
+# --
+${1:Paragraph}
+${1:$(make-string (string-width text) ?\")}
+
+$0

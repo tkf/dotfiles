@@ -1,6 +1,9 @@
 all: \
 django-mode.el revive.el revive.el windows.el winhist.el key-chord.el \
-org-6.28d/lisp/org-install.elc
+org-6.28d/lisp/org-install.elc org-extension.el pysmell.el auto-complete.el
+
+org-extension.el:
+	wget http://www.emacswiki.org/emacs/download/org-extension.el
 
 #python-mode.el:
 #	wget http://launchpadlibrarian.net/21781107/python-mode.el
