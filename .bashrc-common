@@ -1,10 +1,6 @@
 alias lss='ln -s'
 alias emacsnw='emacs -nw'
 
-PATH=$PATH:${HOME}/mybin:${HOME}/Dropbox/linux/secret_bin
-
-export PYTHONPATH=${PYTHONPATH}:${HOME}/work/wm/home/`uname -m`/lib/python/
-
 case `hostname` in
 yoganidra.bdc.net)
     echo "DISPLAY: "$DISPLAY
@@ -16,12 +12,13 @@ c*.bdc.net)
     fi
 ;;
 fst.*)
-    echo "---"
-    echo "ssh to yoganidra"
-    ssh yoganidra -X
+    #echo "---"
+    #echo "ssh to yoganidra"
+    #ssh yoganidra -X
 ;;
 esac
 
+[ -f ~/.priv_config/rc-path.sh ] && source ~/.priv_config/rc-path.sh
 
 # Local Variables:
 # mode: shell-script

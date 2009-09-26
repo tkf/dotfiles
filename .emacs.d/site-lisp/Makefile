@@ -1,6 +1,18 @@
 all: \
 django-mode.el revive.el revive.el windows.el winhist.el key-chord.el \
-weblogger org-6.28d
+org-6.28d/lisp/org-install.elc org-extension.el pysmell.el auto-complete.el
+
+org-extension.el:
+	wget http://www.emacswiki.org/emacs/download/org-extension.el
+
+#python-mode.el:
+#	wget http://launchpadlibrarian.net/21781107/python-mode.el
+
+pysmell.el:
+	wget http://github.com/orestis/pysmell/raw/beea16c18e57e09aa41c3175d9126cff5f59f853/pysmell.el
+
+auto-complete.el:
+	wget http://www.cx4a.org/pub/auto-complete.el
 
 #org-6.28d/lisp/org-install.elc: org-6.28d/
 #	make -f org-6.28d/Makefile

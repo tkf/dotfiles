@@ -1,3 +1,6 @@
+(setq TeX-japanese-process-input-coding-system 'euc-jp
+      TeX-japanese-process-output-coding-system 'euc-jp)
+
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
 ;; 日本語 TeX 用の設定
@@ -15,6 +18,12 @@
 (setq TeX-parse-self t)
 
 ;(setq-default TeX-master nil)
+
+(eval-after-load "tex"
+  '(add-to-list 'TeX-command-list
+		'("DviPdfMx" "dvipdfmx %s" TeX-run-command nil t)
+		)
+  )
 
 ;; no "sections"
 (setq preview-default-option-list

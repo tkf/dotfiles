@@ -14,3 +14,4 @@ bind s exec !!! $HOME/mybin/screen-copy2x.sh
 
 bind d setenv DISPLAY
 bind c echo $DISPLAY
+bind ^H stuff "--help 2>&1 | less"

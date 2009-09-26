@@ -1,0 +1,7 @@
+#name : Part title
+# --
+${1:$(make-string (string-width text) ?\#)}
+${1:Part}
+${1:$(make-string (string-width text) ?\#)}
+
+$0

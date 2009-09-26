@@ -6,6 +6,9 @@
 ;(setq fill-column 77)
 ;(setq rst-mode-hook 'turn-on-auto-fill)
 
+; for dark background. it must be moved to host-*.
+(setq frame-background-mode 'dark)
+
 (require 'rst)
 (setq auto-mode-alist
       (append '(;("\\.txt$" . rst-mode)

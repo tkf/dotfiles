@@ -1,0 +1,7 @@
+#name : display math
+# --
+.. math::
+
+  ${\exp i\pi = -1}
+
+$0
