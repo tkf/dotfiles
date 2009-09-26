@@ -11,21 +11,14 @@
       org-todo-interpretation 'type)
 
 (setq org-agenda-files
-      (list "~/memo/projects/go-abroad.org"
-	    "~/memo/projects/life.org"
-	    "~/memo/projects/res-MtDyRNN.org"
-	    "~/memo/projects/res-WkMem.org"
-	    "~/memo/projects/study.org"
-	    "~/memo/projects/lab-misc.org"
+      (list "~/todo/go-abroad.org"
+	    "~/todo/life.org"
+	    "~/todo/res-MtDyRNN.org"
+	    "~/todo/study.org"
+	    "~/todo/lab-misc.org"
 	    ))
 
 (setq org-export-publishing-directory "~/misc/pub_org/")
-
-;(setq org-agenda-files
-;      (list "~/repos/arataka/org/memo.org"
-;	    "~/repos/arataka/org/gtd.org"
-;	    "~/repos/arataka/org/daily.org"
-;	    ))
 
 (setq org-tag-persistent-alist '((:startgroup . nil)
 		      ("@lab" . ?l) ("@univ" . ?u) ("@home" . ?h)
@@ -35,3 +28,5 @@
 		      ("PAPER" . ?a) ("MAIL" . ?m)
 		      ))
 ;("" . ?)
+
+(require 'org-extension)
