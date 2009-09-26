@@ -14,11 +14,12 @@ pysmell.el:
 auto-complete.el:
 	wget http://www.cx4a.org/pub/auto-complete.el
 
-org-6.28d/lisp/org-install.elc: org-6.28d/
-	make -f org-6.28d/Makefile
+#org-6.28d/lisp/org-install.elc: org-6.28d/
+#	make -f org-6.28d/Makefile
 
 org-6.28d: org-6.28d.tar.gz
 	tar zxf $<
+	echo "Please make org-6.28. Do this: \n% cd org-6.28\n% make"
 
 org-6.28d.tar.gz:
 	wget http://orgmode.org/org-6.28d.tar.gz
