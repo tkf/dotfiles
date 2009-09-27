@@ -33,19 +33,19 @@ case ${UID} in
   # change PROMPT by machines
   case `hostname` in
     yoganidra.bdc.net)
-      PROMPT='%{${fg[yellow]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
+      PROMPT='%{${fg[yellow]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%?%{$reset_color%} '
       RPROMPT='%{${fg[green]}%}[%~]%{$reset_color%}'
       ;;
     takafumi-*)
-      PROMPT='%{${fg[red]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
+      PROMPT='%{${fg[red]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%?%{$reset_color%} '
       RPROMPT='%{[33m%}[%~]%{[m%}'
       ;;
     c*.bdc.net)
-      PROMPT='%{${bg[cyan]}%}%{${fg[black]}%}${HOST%%.*}-${PBS_JOBID%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
+      PROMPT='%{${bg[cyan]}%}%{${fg[black]}%}${HOST%%.*}-${PBS_JOBID%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%?%{$reset_color%} '
       RPROMPT='%{${fg[green]}%}[%~]%{$reset_color%}'
       ;;
     *)
-      PROMPT='%{${fg[white]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%{$reset_color%} '
+      PROMPT='%{${fg[white]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%?%{$reset_color%} '
       RPROMPT='%{[33m%}[%~]%{[m%}'
       ;;
   esac
