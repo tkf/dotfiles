@@ -38,6 +38,7 @@
 ;=======================================================================
 ;フレームサイズ・位置・色など
 ;=======================================================================
+(menu-bar-mode -1); no menu bar
 (setq initial-frame-alist
 	(append (list
 ;		   '(foreground-color . "white")		;; 文字色
@@ -125,6 +126,8 @@
 ;(require 'color-theme)
 ;(color-theme-initialize)
 ;(color-theme-charcoal-black)
+(setq frame-background-mode 'dark)
+
 
 ;
 (setq truncate-partial-width-windows nil)
