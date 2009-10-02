@@ -40,6 +40,7 @@
 (set-scroll-bar-mode 'right);;スクロールバーを右に表示
 (setq frame-title-format;;フレームのタイトル指定
 	(concat "%b - emacs@" system-name))
+(tool-bar-mode 0);; no tool bar
 
 ;(display-time)	;;時計を表示
 (global-set-key "\C-h" 'backward-delete-char);;Ctrl-Hでバックスペース

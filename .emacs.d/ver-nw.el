@@ -6,6 +6,9 @@
 ; emacsclient
 (server-start)
 
+; no menu bar
+(menu-bar-mode -1)
+
 ;(cond
 ; ;; mlterm
 ; ((string-match "mlterm" (getenv '"TERM"))
