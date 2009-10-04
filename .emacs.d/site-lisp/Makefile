@@ -1,6 +1,10 @@
 all: \
 django-mode.el revive.el revive.el windows.el winhist.el key-chord.el \
-org-6.28d/lisp/org-install.elc org-extension.el pysmell.el auto-complete.el
+org-6.28d/lisp/org-install.elc org-extension.el pysmell.el auto-complete.el \
+gist-el
+
+gist-el:
+	git clone git://github.com/defunkt/gist.el.git gist-el
 
 org-extension.el:
 	wget http://www.emacswiki.org/emacs/download/org-extension.el

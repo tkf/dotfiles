@@ -11,6 +11,7 @@
 (add-to-list 'load-path (concat my-site-lisp-path "color-theme-6.6.0/") )
 (add-to-list 'load-path (concat my-site-lisp-path "weblogger/") )
 (add-to-list 'load-path (concat my-site-lisp-path "org-6.28d/lisp/") )
+(add-to-list 'load-path (concat my-site-lisp-path "gist-el/") )
 
 ;; mylib
 (setq mylib-path
