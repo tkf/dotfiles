@@ -161,6 +161,7 @@
 
 ; ipython
 (setq ipython-command "/home/takafumi/linux_x86_64/bin/ipython")
+;(setq py-python-command-args '("-pylab"))
 (require 'ipython)
 
 ; emacsclient
