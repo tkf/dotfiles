@@ -1,2 +1,2 @@
-(require 'url-http)
-(require 'gist)
+(require 'url-http nil t)
+(require 'gist nil t)

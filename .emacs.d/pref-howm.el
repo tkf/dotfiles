@@ -18,4 +18,4 @@
 (setq howm-menu-recent-regexp "^.+\n=\\{10,\\}$")  ;; %recent in menu
 
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/howm/")
-(require 'howm-mode)
+(require 'howm-mode nil t)

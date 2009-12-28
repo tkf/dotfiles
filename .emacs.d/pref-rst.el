@@ -9,9 +9,12 @@
 ; for dark background. it must be moved to host-*.
 (setq frame-background-mode 'dark)
 
-(require 'rst)
-(setq auto-mode-alist
-      (append '(;("\\.txt$" . rst-mode)
-                ("\\.rst$" . rst-mode)
-                ("\\.rest$" . rst-mode)) auto-mode-alist))
-(add-hook 'text-mode-hook 'rst-text-mode-bindings)
+(require 'rst nil t)
+(eval-after-load "rst"
+  '(progn
+     (setq auto-mode-alist
+	   (append '(;("\\.txt$" . rst-mode)
+		     ("\\.rst$" . rst-mode)
+		     ("\\.rest$" . rst-mode)) auto-mode-alist))
+     (add-hook 'text-mode-hook 'rst-text-mode-bindings)
+     ))

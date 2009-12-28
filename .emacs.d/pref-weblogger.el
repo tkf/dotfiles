@@ -1,1 +1,1 @@
-(require 'weblogger)
+(require 'weblogger nil t)

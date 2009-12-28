@@ -1,3 +1,4 @@
 ; color-theme
-(require 'color-theme)
-(color-theme-initialize)
+(require 'color-theme nil t)
+(eval-after-load "color-theme"
+  '(color-theme-initialize))
