@@ -1,1 +1,1 @@
-(require 'django-mode)
+(require 'django-mode nil t)

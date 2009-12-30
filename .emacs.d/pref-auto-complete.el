@@ -1,3 +1,3 @@
 ; auto-complete-mode
-(require 'auto-complete)
+(require 'auto-complete nil t)
 ;(global-auto-complete-mode t)

@@ -181,6 +181,9 @@ case `hostname` in
     "yoganidra.bdc.net")
 	HISTFILE=~/.zsh_history
 	;;
+    "ecovm")
+	HISTFILE=~/.zsh_history
+	;;
     *)
 	HISTFILE=~/.zsh_history_others
 	;;
