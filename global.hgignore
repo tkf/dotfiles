@@ -13,3 +13,7 @@ syntax: glob
 tags
 *.elc
 *.pyc
+GPATH
+GRTAGS
+GSYMS
+GTAGS
