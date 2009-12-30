@@ -1,0 +1,4 @@
+# -*- coding: utf-8 -*-
+# name: {foo} = self.{foo}
+# --
+${1:foo} = self.$1
