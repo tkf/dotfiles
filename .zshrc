@@ -219,5 +219,6 @@ log2howm () {
 }
 
 [ -f ~/.priv_config/rc-path.sh ] && source ~/.priv_config/rc-path.sh
+[ -f ~/dotfiles/myfuncs.sh ] && source ~/dotfiles/myfuncs.sh
 
 export EDITOR=emacsclient
