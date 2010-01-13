@@ -1,0 +1,5 @@
+#name : typedef struct ... { ... };
+# --
+typedef struct ${1:$(downcase text)}_{
+  $0
+} ${1:name};

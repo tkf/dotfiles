@@ -137,6 +137,11 @@
    1)
   )
 
+;; mouse wheel settings --- http://www.rubyist.net/~matz/20060913.html
+(mwheel-install)
+(setq mouse-wheel-follow-mouse t)
+(if (display-mouse-p) (mouse-avoidance-mode 'exile))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (custom-set-variables
   ;; custom-set-variables was added by Custom.

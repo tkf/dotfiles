@@ -24,24 +24,24 @@ screen-hgs-start()
 {
     screennum=10
     if [ $# -eq 3 ]; then
-	screensnum=$3
+	screennum=$3
     elif [ $# -ne 2 ]; then
 	echo "Need three or two arguments."
 	return 1
     fi
-    {cd $1 && screen -t hgs $screensnum hg serve -p $2}&
+    {cd $1 && screen -t hgs $screennum hg serve -p $2}&
 }
 
 screen-shs-start()
 {
     screennum=10
     if [ $# -eq 3 ]; then
-	screensnum=$3
+	screennum=$3
     elif [ $# -ne 2 ]; then
 	echo "Need three or two arguments."
 	return 1
     fi
-    {cd $1 && screen -t shs $screensnum python -m SimpleHTTPServer $2}&
+    {cd $1 && screen -t shs $screennum python -m SimpleHTTPServer $2}&
 }
 
 cfunc-def () {

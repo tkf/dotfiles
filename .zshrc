@@ -36,8 +36,16 @@ case ${UID} in
       PROMPT='%{${fg[yellow]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%?%{$reset_color%} '
       RPROMPT='%{${fg[green]}%}[%~]%{$reset_color%}'
       ;;
-    takafumi-*)
+    takafumi-bdc1)
       PROMPT='%{${fg[red]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%?%{$reset_color%} '
+      RPROMPT='%{[33m%}[%~]%{[m%}'
+      ;;
+    takafumi-bdc2)
+      PROMPT='%{${fg[cyan]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[red]%}%#%?%{$reset_color%} '
+      RPROMPT='%{[33m%}[%~]%{[m%}'
+      ;;
+    takafumi-*)
+      PROMPT='%{${fg[green]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[yellow]%}%#%?%{$reset_color%} '
       RPROMPT='%{[33m%}[%~]%{[m%}'
       ;;
     c*.bdc.net)
@@ -107,6 +115,8 @@ setopt share_history # share command history data
 #
 autoload -U compinit
 compinit
+
+autoload zed
 
 ## Alias configuration
 #
