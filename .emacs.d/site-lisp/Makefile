@@ -1,7 +1,10 @@
 all: \
 django-mode.el revive.el revive.el windows.el winhist.el key-chord.el \
 org-6.28d/lisp/org-install.elc org-extension.el pysmell.el auto-complete.el \
-gist-el
+gist-el doctest-mode.el
+
+doctest-mode.el:
+	wget 'http://python-mode.svn.sourceforge.net/viewvc/*checkout*/python-mode/trunk/python-mode/doctest-mode.el?revision=460' --progress=dot -O $@
 
 gist-el:
 	git clone git://github.com/defunkt/gist.el.git gist-el

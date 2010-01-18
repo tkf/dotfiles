@@ -73,6 +73,10 @@
 ;; use alphabetical day str (e.g.: Tue)
 (setq system-time-locale "C")
 
+;; ignore UPPER/lower-case
+(setq completion-ignore-case t)
+(setq read-file-name-completion-ignore-case t)
+
 ;;
 (add-hook 'comint-output-filter-functions
           'comint-watch-for-password-prompt)

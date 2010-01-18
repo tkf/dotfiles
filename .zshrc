@@ -45,7 +45,7 @@ case ${UID} in
       RPROMPT='%{[33m%}[%~]%{[m%}'
       ;;
     takafumi-*)
-      PROMPT='%{${fg[green]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[yellow]%}%#%?%{$reset_color%} '
+      PROMPT='%{${fg[green]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{${bg[cyan]}%}%{$fg[black]%}%#%?%{$reset_color%} '
       RPROMPT='%{[33m%}[%~]%{[m%}'
       ;;
     c*.bdc.net)

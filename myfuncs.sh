@@ -1,3 +1,32 @@
+md(){
+    mkdir -v "$@"
+    cd "$1"
+}
+
+path2url(){
+    while getopts u:p: OPT
+    do
+	case $OPT in
+	    "u" ) FLG_URL_BASE="TRUE" ; URL_BASE="$OPTARG" ;;
+	    "p" ) FLG_PATH_BASE="TRUE" ; PATH_BASE="$OPTARG" ;;
+	    * ) echo "Usage: path2url [-u URL] [-p PATH] files ..." 1>&2
+		return 1 ;;
+	esac
+    done
+    shift `expr $OPTIND - 1`
+    if [ "$FLG_URL_BASE" != "TRUE" ]; then
+	URL_BASE="http://localhost"
+    fi
+    if [ "$FLG_PATH_BASE" != "TRUE" ]; then
+	PATH_BASE=`pwd`
+    fi
+    CWD=`pwd`
+    for hfile in "$@"
+    do
+	echo "${URL_BASE}/${CWD#$PATH_BASE}/${hfile}"
+    done
+}
+
 hgs-start(){
     if [ ! -d ~/tmp/log/ ]; then
 	echo "~/tmp/log/ not found"
