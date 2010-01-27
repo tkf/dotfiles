@@ -44,6 +44,20 @@ case ${UID} in
       PROMPT='%{${fg[cyan]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[red]%}%#%?%{$reset_color%} '
       RPROMPT='%{[33m%}[%~]%{[m%}'
       ;;
+    takafumi-c00)
+      PROMPT='%U%{${fg[green]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%u(j=%j|?=%?) %~
+%{${bg[cyan]}%}%{$fg[black]%}%#%{$reset_color%} '
+      # VCS in RPROMPT
+      autoload -Uz vcs_info
+      zstyle ':vcs_info:*' formats '(%s)-[%b]'
+      zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+      precmd () {
+	  psvar=()
+	  LANG=en_US.UTF-8 vcs_info
+	  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+      }
+      RPROMPT="%1(v|%F{green}%1v%f|)"
+      ;;
     takafumi-*)
       PROMPT='%{${fg[green]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{${bg[cyan]}%}%{$fg[black]%}%#%?%{$reset_color%} '
       RPROMPT='%{[33m%}[%~]%{[m%}'
