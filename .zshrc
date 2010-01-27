@@ -45,8 +45,8 @@ case ${UID} in
       RPROMPT='%{[33m%}[%~]%{[m%}'
       ;;
     takafumi-c00)
-      PROMPT='%U%{${fg[green]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%u(j=%j|?=%?) %~
-%{${bg[cyan]}%}%{$fg[black]%}%#%{$reset_color%} '
+      PROMPT='%U%{${fg[red]}%}${HOST%%.*}%{$reset_color%}%u(j=%j|?=%?${WINDOW:+"|w=$WINDOW"}) %~
+%# '
       # VCS in RPROMPT
       autoload -Uz vcs_info
       zstyle ':vcs_info:*' formats '(%s)-[%b]'
@@ -129,6 +129,9 @@ setopt share_history # share command history data
 #
 autoload -U compinit
 compinit
+
+# ignore case
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 autoload zed
 
