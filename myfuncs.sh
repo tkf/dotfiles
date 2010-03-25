@@ -91,3 +91,37 @@ cfunc-diff() {
     rm -f $tmp_file2
     rm -f $tmp_file1
 }
+
+npwd () {
+    if [ "${1}" ]
+    then
+	dlen=${1}
+    else
+	dlen=1
+    fi
+    cwd=`pwd`
+    pad=`for i in \`seq ${dlen}\`; do cd ..; done; pwd`
+    echo ${cwd#${pad}/}
+}
+
+loop-qstat-grep-and-rec (){
+    regexp=$1
+    recpath=$2
+    interval=$3
+    while [ -n "`qstat | grep \"${regexp}\"`" ]
+    do
+	qstat | grep "${regexp}" > ${recpath}
+	sleep ${interval}
+    done
+    qstat | grep ${regexp} > ${recpath}
+}
+
+when-jobs-end (){
+    regexp=$1
+    interval=$2
+    while [ -n "`qstat | grep \"${regexp}\"`" ]
+    do
+	sleep ${interval}
+    done
+}
+

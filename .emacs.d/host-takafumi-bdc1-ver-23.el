@@ -11,6 +11,13 @@
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/yatex/")
 
 ; set frame width and height with command
+(defun my-frame-4c-s12 ()
+  (interactive)
+  (set-default-font "VL Gothic-12")
+  (set-frame-width (selected-frame) 332)
+  (set-frame-height (selected-frame) 56)
+  )
+
 (defun my-frame-2c-s12 ()
   (interactive)
   (set-default-font "VL Gothic-12")
