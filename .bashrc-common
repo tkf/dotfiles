@@ -3,7 +3,7 @@ alias emacsnw='emacs -nw'
 
 case `hostname` in
 yoganidra.bdc.net)
-    echo "DISPLAY: "$DISPLAY
+    echo "DISPLAY: "$DISPLAY 1>&2 1>/dev/null
 ;;
 c*.bdc.net)
     if [ "$PBS_ENVIRONMENT" = 'PBS_INTERACTIVE' ]; then
