@@ -12,3 +12,10 @@
 tags
 *.elc
 *.pyc
+*.png
+*.jpg
+*.jpeg
+*.eps
+*.pdf
+*.aux
+*.log

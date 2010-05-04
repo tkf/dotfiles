@@ -1,4 +1,5 @@
 *.el
 weblogger*
-org-*
+org*
 color-theme*
+howm*

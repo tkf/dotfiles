@@ -16,5 +16,5 @@
 	   (append '(;("\\.txt$" . rst-mode)
 		     ("\\.rst$" . rst-mode)
 		     ("\\.rest$" . rst-mode)) auto-mode-alist))
-     (add-hook 'text-mode-hook 'rst-text-mode-bindings)
+     ;(add-hook 'text-mode-hook 'rst-text-mode-bindings)
      ))

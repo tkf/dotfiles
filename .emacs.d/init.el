@@ -10,7 +10,8 @@
 (add-to-list 'load-path my-site-lisp-path )
 (add-to-list 'load-path (concat my-site-lisp-path "color-theme-6.6.0/") )
 (add-to-list 'load-path (concat my-site-lisp-path "weblogger/") )
-(add-to-list 'load-path (concat my-site-lisp-path "org-6.28d/lisp/") )
+(add-to-list 'load-path (concat my-site-lisp-path "org/lisp/") )
+(add-to-list 'load-path (concat my-site-lisp-path "howm/") )
 (add-to-list 'load-path (concat my-site-lisp-path "gist-el/") )
 
 ;; mylib
@@ -129,7 +130,9 @@
 (setq hostname (my-get-stdout-shell-command "hostname"))
 (setq host-setting-file
       (concat preferences-directory "host-" hostname ".el"))
-(load host-setting-file)
+(if (file-exists-p host-setting-file)
+    (load host-setting-file))
+
 
 ;; rst2wp
 (defun insert-rst2wp-of-other-buffer ()
