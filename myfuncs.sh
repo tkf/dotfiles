@@ -34,8 +34,8 @@ hgs-start(){
     fi
     {cd $1 && \
 	hg serve -p $2 \
-	--accesslog ~/tmp/hgs-access-$2.log \
-	--errorlog ~/tmp/hgs-error-$2.log}
+	--accesslog ~/tmp/log/hgs-access-$2.log \
+	--errorlog ~/tmp/log/hgs-error-$2.log}
 }
 
 shs-start()
