@@ -2,7 +2,7 @@
 #
 # LANG
 #
-export LANG=ja_JP.UTF-8
+export LANG=en_US.UTF-8
 
 ## Default shell configuration
 #
@@ -65,6 +65,10 @@ case ${UID} in
     c*.bdc.net)
       PROMPT='%{${bg[cyan]}%}%{${fg[black]}%}${HOST%%.*}-${PBS_JOBID%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%?%{$reset_color%} '
       RPROMPT='%{${fg[green]}%}[%~]%{$reset_color%}'
+      ;;
+    pcneurophys*)
+      PROMPT='%U%{${fg[cyan]}%}${HOST%%.*}%{$reset_color%}%u[j=%{${fg[yellow]}%}%j%{$reset_color%}|?=%{${fg[yellow]}%}%?%{$reset_color%}${WINDOW:+"|w=%{${fg[yellow]}%}$WINDOW%{$reset_color%}"}] %~
+%# '
       ;;
     *)
       PROMPT='%{${fg[white]}%}${HOST%%.*}%{$reset_color%}${WINDOW:+"[$WINDOW]"}%{$fg[cyan]%}%#%?%{$reset_color%} '
