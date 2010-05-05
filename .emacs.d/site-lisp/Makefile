@@ -3,7 +3,7 @@ ORG_VER=6.35i
 all: \
 django-mode.el revive.el revive.el windows.el winhist.el key-chord.el \
 org org-extension.el pysmell.el auto-complete.el \
-gist-el doctest-mode.el howm
+gist-el doctest-mode.el howm yaml-mode.el
 
 howm/: howm-1.3.8/
 	ln -s howm-1.3.8 howm
@@ -80,3 +80,12 @@ windows.el:
 
 color-theme-6.6.0/: get-color-theme.sh
 	sh get-color-theme.sh
+
+yaml-mode.el: yaml-mode-0.0.6/yaml-mode.el
+	cp $< .
+
+yaml-mode-0.0.6/yaml-mode.el: yaml-mode-0.0.6.tar.gz
+	tar zxf $<
+
+yaml-mode-0.0.6.tar.gz:
+	wget http://github.com/downloads/yoshiki/yaml-mode/yaml-mode-0.0.6.tar.gz
