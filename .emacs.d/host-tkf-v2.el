@@ -9,11 +9,15 @@
 
 (if window-system
     (progn ;; if not 'emacs -nw'
-      (color-theme-clarity)
+      (color-theme-goldenrod)
       ;; for black background color
       (setq py-python-command-args '("-pylab" "-colors" "Linux"))
       )
   )
+
+; browser
+(setq browse-url-browser-function 'browse-url-generic)
+(setq browse-url-generic-program "google-chrome") 
 
 ; anthy
 (setq anthy-accept-timeout 1)
