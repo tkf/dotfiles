@@ -21,3 +21,5 @@ GTAGS
 .nfs*
 *.aux
 *.log
+.waf-*
+.lock-wscript
